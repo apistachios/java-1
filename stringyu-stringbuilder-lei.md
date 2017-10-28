@@ -16,7 +16,7 @@ String s2 = new String(chs);
 String s3 = new String(chs,0,chs.length); //(数组名,起始位置,长度)
 // 直接赋值
 String s4 = "hello";
-```
+``` 
 
 
 - ==
