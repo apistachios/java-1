@@ -8,4 +8,5 @@
 * [类](lei.md)
 * [集合](ji-he.md)
 * [面向对象](ji-cheng.md)
+* [String与Stringbuilder类](stringyu-stringbuilder-lei.md)
 
