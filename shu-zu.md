@@ -21,7 +21,7 @@
 
 #### 二维数组 
 - `int[][] arr = new int[2][2];` 
-- `int[][] arr = { {1,2},{1,2,3}};`
+- `int[][] arr = {{1,2},{1,2,3}};`
 - 定义二维不定长数组
 ```java
 int[][] arr = new int[2][];
@@ -43,7 +43,7 @@ for (int b : a) {
 
 - 遍历二维数组元素
 ```java
-int[][] arr = { {1,2},{1,2,3}}; 
+int[][] arr = {{1,2},{1,2,3}}; 
 for (int i = 0; i < arr.length; i++) {
     for (int j = 0; j < arr[i].length; j++) {
         System.out.println(arr[i][j]);
