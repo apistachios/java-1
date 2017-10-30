@@ -2,7 +2,7 @@
 
 * [前言](README.md)
 * JAVA基础
-    * [**1.** 标识符](JAVA基础/biao-shi-fu.md)
+    * [1. 标识符](JAVA基础/biao-shi-fu.md)
     * [2. 循环](JAVA基础/xun-huan.md)
     * [3. 方法](JAVA基础/fang-fa.md)
     * [4. 数组](JAVA基础/shu-zu.md)
