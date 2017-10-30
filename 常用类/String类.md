@@ -2,6 +2,7 @@
 
 构造方法
 
+- `object`代表任意引用类型，不代表基本类型
 - `String(String original)` 把字符串数据封装成字符串对象
 - `String(char[] value)` 把字符数组的数据封装成字符串对象
 - `String(char[] value, int index, int count)` 把字符数组中的一部分数据封装成字符串对象
@@ -16,7 +17,7 @@ String s2 = new String(chs);
 String s3 = new String(chs,0,chs.length); //(数组名,起始位置,长度)
 // 直接赋值
 String s4 = "hello";
-``` 
+```
 
 
 - ==
@@ -25,6 +26,13 @@ String s4 = "hello";
 - 通过过构造方法创建的字符串对象和直接赋值方式创建的字符串不相同
  - 通过构造方法创建字符串对象是在堆内存。
  - 直接赋值方式创建对象是在方法区的常量池。
+
+#### String的format方法
+format为静态方法    
+整形的占位符为%d，浮点类型的为%f
+```java
+String s = String.format("%02d%.1f", i,1.2);
+```
 
 ###  String类的判断功能
 
@@ -55,6 +63,7 @@ System.out.println(s1.endtsWith("lo"));
 * `int indexOf(String str)` 获取str在字符串对象中第一次出现的索引
 * `String substring(int start)` 从start开始截取字符串
 * `String substring(int start,int end)` 从start开始，到end结束截取字符串。包括start，不包括end
+* `boolean contains(CharSequence s) `当前字符串是否包含另一个字符串 
 
 - 注意事项
  - `int indexOf(String str)`获取的内容不存在时返回-1
@@ -74,7 +83,36 @@ System.out.println(s.indexOf("ak")); //不存在的话为-1
 System.out.println(s.substring(0));
 //String substring(int start,int end):从start开始，到end结束截取字符串
 System.out.println(s.substring(0, s.length()));
+//boolean contains(CharSequence s) 当前字符串是否包含另一个字符串，返回true或者false
+System.out.println(s.contains("llo"));
 ```
+#### 字符串转换为数组
+```java
+char[] ch = s.toCharArray();
+byte[] by = s.getBytes();
+```
+
+#### 字符串的分割
+```java
+String str = "1:2:3:4";
+String[] strArr = str.split(":");
+//参数中传的字符串是正则表达式，在正则中，.的含义是任意字符
+//遇到拆分. 要写成\\.
+String st = "1.2.3.4";
+String[] stArr = st.split(".");
+String[] stArr1 = st.split("\\.");
+```
+
+#### 转换字符串的大小写
+
+```java
+String strr = "HelloWorld";
+//toUpperCase()全部变为大写
+System.out.println(strr.toUpperCase());
+//toLowerCase()全部变为小写
+System.out.println(strr.toLowerCase());
+```
+
 ###  遍历字符串
 
 - 原始做法
@@ -132,7 +170,7 @@ for(int x=0; x<s.length(); x++) {
 ```
 
 
-###  String类的转换功能
+####  String类的转换功能
 
 * `char[] toCharArray()` 把字符串转换为字符数组
 * `String toLowerCase()` 把字符串转换为小写字符串 
@@ -171,125 +209,39 @@ String s3 = s1.toUpperCase()+s2.toLowerCase();
 System.out.println("s3:"+s3);
 ```
 
-### String 的其他功能
+#### String 的其他功能
 
 * 去除字符串两端空格 `String trim()`
 ```java
 String s = "  helloworld  ";
 System.out.println("---"+s.trim()+"---");
 ```
-* 按照指定符号分割字符串 `String[] split(String str)`
+
+### string的api
 ```java
-String s = "aa,bb,cc";
-String[] strArray = s.split(",");
-for(int i=0; i<strArray.length; i++) {
-	   System.out.println(strArray[i]);
-}
- ```
-
-## Stringbuilder
-
- StringBuilder:是一个可变的字符串。字符串缓冲区类。  
-- String和StringBuilder的区别：
- - String的内容是固定的
- - StringBuilder的内容是可变的
-- += 拼接字符串每次拼接都会产生新的字符串对象,而利用StringBuilder来拼接字符串自始至终用的都是同一个StringBuilder容器
-
-### 构造方法
-- 构造方法 `StringBuilder()`
-- 成员方法
- - `public int capacity()` 返回当前容量 (理论值，默认16)
- - `public int length()` 返回长度(已经存储的字符个数，默认0)
- - `public StringBuilder append(任意类型)` 添加数据，并返回自身对象
- - `public StringBuilder reverse()` 反转功能
-
-```java
-StringBuilder sb = new StringBuilder();
-
-sb.append("hello");
-sb.append(true);
-sb.append("hello").append(true); //链式编程
-sb.reverse();
+boolean equals(Object obj) 判断两个字符串中的内容是否相同
+boolean equalsIgnoreCase(String str)判断两个字符串中的内容是否相同, 忽略大小写
+boolean contains(String str) 判断该字符串中是否包含给定的字符串
+boolean startsWith(String str) 判断该字符串是否以给定的字符串开头
+boolean endsWith(String str) 判断该字符串是否以给定的字符串结尾
+boolean isEmpty() 判断该字符串的内容是否为空的字符串""
+int length() 获取该字符串的长度
+char charAt(int index) 获取该字符串中指定位置上的字符
+String substring(int start) 从指定位置开始,到末尾结束,截取该字符串,返回新字符串
+String substring(int start,int end) 从指定位置开始,到指定位置结束,截取该字符串,返回新字符串
+int indexOf(int ch ) 获取给定的字符,在该字符串中第一次出现的位置
+int indexOf(String str) 获取给定的字符串,在该字符串中第一次出现的位置
+int indexOf(int ch,int fromIndex) 从指定位置开始,获取给定的字符,在该字符
+byte[] getBytes() 把该字符串 转换成 字节数组
+char[] toCharArray() 把该字符串 转换成 字符数组
+String replace(char old,char new) 在该字符串中,将给定的旧字符,用新字符替换
+String replace(String old,String new) 在该字符串中, 将给定的旧字符串,用新字符串替换
+String trim() 去除字符串两端空格,中间的不会去除,返回一个新字符串
+String toLowerCase() 把该字符串转换成 小写字符串
+String toUpperCase() 把该字符串转换成 大写字符串
+int indexOf(String str,int fromIndex) 从指定位置开始,获取给定的字符串,在该字符串中第一次出现的位置
 ```
 
-### StringBuilder与String相互转换
-
-- StringBuilder to String
- - `public String toString()` 通过toString()就可以实现把StringBuilder转成String
-```java
-StringBuilder sb = new StringBuilder();
-sb.append("hello");
-String s = sb.toString();
-```
-- String to StringBuilder
- - `StringBuilder(String str)` 通过构造方法就可以实现把String转成StringBuilder
-```java
-String s = "hello";
-StringBuilder sb = new StringBuilder(s);
-```
-
-### 数组拼接成字符串
-将数组{1,2,3}转换为字符串[1, 2, 3]
-```java
-public static void main(String[] args) {
-    int[] arr = {1,2,3};
-    String s = arrayToString(arr);
-    System.out.println(s);
-}
-	
-public static String arrayToString(int[] arr) {
-    StringBuilder sb = new StringBuilder();
-    sb.append("[");
-    for (int i = 0; i < arr.length; i++) {
-        if (i==arr.length-1) {
-            sb.append(arr[i]);
-        } else {
-            sb.append(arr[i]).append(", ");
-        }
-    }
-    sb.append("]");
-    String result = sb.toString();
-    return result;
-	}
-```
-
-### 字符串反转
-String转换为StringBuilder，再reverse()，再转换为String
-```java
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    String s = sc.nextLine();
-    String resout = myReverse(s);
-    System.out.println(resout);
-
-}
-
-public static String myReverse(String s) {
-    StringBuilder sb = new StringBuilder(s);
-    sb.reverse();
-    String resout = sb.toString();
-    return resout;
-}
-```
-
-### 判断一个字符串是否是对称字符串
-将字符串反转，然后判断是否相等
-```java
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String s = sc.nextLine();
-		boolean b = isSymmetry(s);
-		System.out.println(b);
-	}
-	
-	public static boolean isSymmetry(String s){
-		StringBuilder sb = new StringBuilder(s);
-		sb.reverse();
-		String resout = sb.toString();
-		
-		return resout.equals(s);
-	}
-    ```
 
 
 
