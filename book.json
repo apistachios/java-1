@@ -1,14 +1,15 @@
 {
-    "title": "JAVA笔记",
-    "structure": {
-      "readme": "README.md"
-    },
-    "links": {
-      "gitbook": true,
-      "sharing": {
-        "google": false,
-        "facebook": false,
-        "twitter": false,
-        "all": false
-      }
+  "title": "JAVA笔记",
+  "structure": {
+    "readme": "README.md"
+  },
+  "links": {
+    "gitbook": true,
+    "sharing": {
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "all": false
     }
+  }
+}
