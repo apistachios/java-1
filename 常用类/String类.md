@@ -1,6 +1,6 @@
 # String字符串
 
-构造方法
+## 构造方法
 
 - `object`代表任意引用类型，不代表基本类型
 - `String(String original)` 把字符串数据封装成字符串对象
@@ -27,14 +27,14 @@ String s4 = "hello";
  - 通过构造方法创建字符串对象是在堆内存。
  - 直接赋值方式创建对象是在方法区的常量池。
 
-#### String的format方法
+## String的format方法
 format为静态方法    
 整形的占位符为%d，浮点类型的为%f
 ```java
 String s = String.format("%02d%.1f", i,1.2);
 ```
 
-###  String类的判断功能
+##  String类的判断功能
 
 Object:是类层次结构中的根类，所有的类都直接或者间接的继承自该类。
 
@@ -55,7 +55,7 @@ System.out.println(s1.startsWith("he"));
 System.out.println(s1.endtsWith("lo"));
 ```
 
-###  String类的获取功能
+##  String类的获取功能
 
 * String类的获取功能：
 * `int length()` 获取字符串的长度，其实也就是字符个数
@@ -86,13 +86,16 @@ System.out.println(s.substring(0, s.length()));
 //boolean contains(CharSequence s) 当前字符串是否包含另一个字符串，返回true或者false
 System.out.println(s.contains("llo"));
 ```
-#### 字符串转换为数组
+
+## String类的其他方法
+
+### 字符串转换为数组
 ```java
 char[] ch = s.toCharArray();
 byte[] by = s.getBytes();
 ```
 
-#### 字符串的分割
+### 字符串的分割
 ```java
 String str = "1:2:3:4";
 String[] strArr = str.split(":");
@@ -103,7 +106,7 @@ String[] stArr = st.split(".");
 String[] stArr1 = st.split("\\.");
 ```
 
-#### 转换字符串的大小写
+### 转换字符串的大小写
 
 ```java
 String strr = "HelloWorld";
@@ -113,7 +116,14 @@ System.out.println(strr.toUpperCase());
 System.out.println(strr.toLowerCase());
 ```
 
-###  遍历字符串
+### 去除字符串两端空格
+去除字符串两端空格 `String trim()`
+```java
+String s = "  helloworld  ";
+System.out.println("---"+s.trim()+"---");
+```
+
+##  遍历字符串
 
 - 原始做法
 ```java
@@ -169,8 +179,7 @@ for(int x=0; x<s.length(); x++) {
 }
 ```
 
-
-####  String类的转换功能
+##  String类的转换功能
 
 * `char[] toCharArray()` 把字符串转换为字符数组
 * `String toLowerCase()` 把字符串转换为小写字符串 
@@ -209,15 +218,7 @@ String s3 = s1.toUpperCase()+s2.toLowerCase();
 System.out.println("s3:"+s3);
 ```
 
-#### String 的其他功能
-
-* 去除字符串两端空格 `String trim()`
-```java
-String s = "  helloworld  ";
-System.out.println("---"+s.trim()+"---");
-```
-
-### string的api
+## string的api
 ```java
 boolean equals(Object obj) 判断两个字符串中的内容是否相同
 boolean equalsIgnoreCase(String str)判断两个字符串中的内容是否相同, 忽略大小写

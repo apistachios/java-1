@@ -8,7 +8,7 @@ Map是集合容器,存放的元素由键与值两部分组成,通
 - key不能重复,value可以重复  
 - key和value的数据类型为 `Object`  
 
-#### HashMap
+## HashMap
 ```java
 HashMap<String, String> map = new HashMap<>();
 map.put("a", "张三"); //添加元素
@@ -21,7 +21,7 @@ System.out.println(map.remove("a")); //删除对应key,返回value
 System.out.println(map.remove("s")); //没有对应key的话返回null
 ```
 
-#### 遍历map
+## 遍历map
 - `keySet`方法返回的是一个集合,集合中放到是所有的key
 ```java
 Set<String> keys = map.keySet();

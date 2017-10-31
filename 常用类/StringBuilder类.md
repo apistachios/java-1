@@ -6,7 +6,7 @@
  - StringBuilder的内容是可变的
 - += 拼接字符串每次拼接都会产生新的字符串对象,而利用StringBuilder来拼接字符串自始至终用的都是同一个StringBuilder容器
 
-### 构造方法
+## 构造方法
 - 构造方法 `StringBuilder()`
 - 成员方法
  - `public int capacity()` 返回当前容量 (理论值，默认16)
@@ -43,7 +43,7 @@ String s = "hello";
 StringBuilder sb = new StringBuilder(s);
 ```
 
-### 数组拼接成字符串
+## 数组拼接成字符串
 将数组{1,2,3}转换为字符串[1, 2, 3]
 ```java
 public static void main(String[] args) {
@@ -68,7 +68,7 @@ public static String arrayToString(int[] arr) {
 	}
 ```
 
-### 字符串反转
+## 字符串反转
 String转换为StringBuilder，再reverse()，再转换为String
 ```java
 public static void main(String[] args) {
@@ -87,7 +87,7 @@ public static String myReverse(String s) {
 }
 ```
 
-### 判断一个字符串是否是对称字符串
+## 判断一个字符串是否是对称字符串
 将字符串反转，然后判断是否相等
 ```java
 	public static void main(String[] args) {

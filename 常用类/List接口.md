@@ -2,7 +2,7 @@
 可以看作是一个容器存储,只能存储引用类型
 - list特点:有序,有索引,能重复
 
-### ArrayList类
+## ArrayList类
 
 为了方便对多个对象进行操作，我们就必须对这多个对象进行存储，而要想对多个对象进行存储，	就不能是一个基本的变量，而应该是一个容器类型的变量。
 
@@ -22,7 +22,7 @@ array.add(1,",");
 System.out.println(array);
 ```
 
-#### ArrayList 的增删改查
+### ArrayList 的增删改查
 
 1. 获取元素
  -  `public E get(int index)` :返回指定索引处的元素
@@ -42,7 +42,7 @@ System.out.println(array.remove(0));
 System.out.println(array.set(1, "android"));
 ```
 
-#### ArrayList集合的遍历
+### ArrayList集合的遍历
 ```java
 for (int i = 0; i < array.size(); i++) {
     String s = array.get(i);
