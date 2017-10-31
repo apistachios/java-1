@@ -1,7 +1,7 @@
 # Summary
 
 * [前言](README.md)
-* [JAVA基本操作](JAVA基本操作/README.md)
+* JAVA基本操作
     * [标识符](JAVA基本操作/标识符.md)
     * [循环](JAVA基本操作/循环.md)
     * [方法](JAVA基本操作/方法.md)
