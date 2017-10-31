@@ -6,6 +6,10 @@
   "structure": {
     "readme": "README.md"
   },
+  "path":{
+    "images" : "img",
+     "toc" : "SUMMARY.md"
+        },
   "links": {
     "gitbook": true,
     "sharing": {
@@ -21,7 +25,6 @@
     "-search", 
     "search-plus",
     "advanced-emoji",
-    "simple-page-toc",
     "anchors",
     "anchor-navigation-ex"
   ],
