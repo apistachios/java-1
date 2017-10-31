@@ -1,4 +1,4 @@
-## Arrays类
+# Arrays类
 
 arrays是集合的工具类,用来操作数组
 

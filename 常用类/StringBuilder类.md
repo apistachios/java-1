@@ -1,4 +1,4 @@
-## StringBuilder(StringBuffer)
+# StringBuilder(StringBuffer)
 
  StringBuilder:是一个可变的字符串。字符串缓冲区类。  
 - String和StringBuilder的区别：
