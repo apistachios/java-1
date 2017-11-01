@@ -123,7 +123,7 @@
 - `cols`属性,文本域的列数  
 - `rows`属性,文本域的行数  
 - `name`属性,发送给服务器的名称  
-- `value`属性,`textarea`的内容
+- `textarea`没有`value`属性,如果要给它赋值写在标签内容位置
 
 ```html
 <textarea rows="10" cols="40" name="textarea"></textarea>
