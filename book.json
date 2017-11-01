@@ -3,6 +3,9 @@
   "author" : "hesir",
   "description" : "JAVA笔记",
   "language" : "zh-hans",
+  "extension": null,
+  "generator": "site",
+  "isbn": null,
   "structure": {
     "readme": "README.md"
   },
@@ -40,6 +43,19 @@
       "tocLevel2Icon": "fa fa-hand-o-right",
       "tocLevel3Icon": "fa fa-hand-o-right"
   }
+  },
+  "pdf": {
+    "fontSize": 12,
+    "footerTemplate": null,
+    "headerTemplate": null,
+    "margin": {
+        "bottom": 36,
+        "left": 62,
+        "right": 62,
+        "top": 36
+    },
+  "pageNumbers": false,
+  "paperSize": "a4"
   }
 
 }
