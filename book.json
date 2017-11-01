@@ -8,6 +8,10 @@
   "structure": {
     "readme": "README.md"
   },
+  "styles": {
+    "website": "styles/website.css",
+    "ebook": "styles/ebook.css"
+  },
   "path":{
     "images" : "img",
      "toc" : "SUMMARY.md"
@@ -29,9 +33,16 @@
     "advanced-emoji",
     "anchors",
     "simple-page-toc",
-    "expandable-chapters-small"
+    "anchor-navigation-ex"
   ],
   "pluginsConfig": {
+    "anchor-navigation-ex": {
+      "isRewritePageTitle": true,
+      "isShowTocTitleIcon": true,
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right"
+  },
     "simple-page-toc": {
         "maxDepth": 3,
         "skipFirstH1": true
