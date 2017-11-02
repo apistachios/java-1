@@ -68,7 +68,7 @@ Accept-Language: zh-CN,zh;q=0.8
 username=12123&password=34324
 ```
 - Http响应
-```java
+```html
 //响应行 http协议
 状态码
 HTTP/1.1 200
