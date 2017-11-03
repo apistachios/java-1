@@ -27,7 +27,6 @@ Servlet是运行在服务端的Java小程序,是sun公司提供一套规范(接�
   <servlet-name>he</servlet-name>
   <servlet-class>test.HelloServelt</servlet-class>
 </servlet>
-
 <servlet-mapping>
   <servlet-name>he</servlet-name>
   <url-pattern>/hello</url-pattern>
@@ -40,19 +39,19 @@ Servlet是运行在服务端的Java小程序,是sun公司提供一套规范(接�
   - 扩展名匹配 `*.do`
   - 缺省配置如 `/`当你访问资源地址所有的servlet都不匹配时,缺省的servlet负责处理. 其实,web应用中所有的资源的响应都是servlet负责,包括静态资源,对于静态资源其实是由tomcat的默认servlet进行处理的
   - `/`和`/*`区别: `/`不会处理后缀名是`.jsp`的资源 `/*`会处理后缀名是`.jsp`的资源
-- 启动服务器的时候创建servlet配置 `<load-on-startup>1</load-on-startup>` 只要不是负数都会随着服务器的启动而创建,值越小优先级越高
+- 启动服务器的时候创建servlet配置 `<load-on-startup>1</load-on-startup>` 只要不是负数都会随着服务器的启动而创建,值越小优先级越高  
 ```html
 <servlet>
   <servlet-name>he</servlet-name>
   <servlet-class>test.HelloServelt</servlet-class>
   <load-on-startup>1</load-on-startup>
  </servlet>
-
  <servlet-mapping>
   <servlet-name>he</servlet-name>
   <url-pattern>/hello</url-pattern>
  </servlet-mapping>
 ```
+
 - 欢迎界面
 ```html
 <welcome-file-list>
