@@ -76,7 +76,9 @@ response.getWriter().write("大家好");
 - `response.getWriter()`获取- `response`缓冲区流
 - 调用`write`方法向缓冲区中输入内容
 - tomcat会自动向缓冲区中获取数据封装成http响应,将数据放在响应体中
+
 ### 解决中文乱码
+
 - Tomcat默认编码格式为iso8859-1,所以需要改编码格式为utf-8
 - 但是浏览器可能解码的时候不是使用UTF­8,
 - 所以我们需要设置一个响应头,通知客户端使用响应的码表进行解码
