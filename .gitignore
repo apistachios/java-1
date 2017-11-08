@@ -2,3 +2,4 @@ node_modules
 _book
 book.json.back
 book.pdf
+package-lock.json
