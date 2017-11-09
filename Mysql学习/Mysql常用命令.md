@@ -11,12 +11,12 @@
 
 ### 数据库操作
 
-- 创建数据库 create database 库名 或者 create database 库名 character set 编码
-- 查看编码 show create database 库名
-- 删除数据库 drop database 库名
-- 使用数据库 use 库名
-- 查看当前操作的库 select database()
-- 查看当前所有的数据库 show databases
+- 创建数据库 `create database 库名` 或者 `create database 库名 character set 编码`
+- 查看编码 `show create database 库名`
+- 删除数据库 `drop database 库名`
+- 使用数据库 `use 库名`
+- 查看当前操作的库 `select database()`
+- 查看当前所有的数据库 `show databases`
 
 ### 表中数据类型
 
@@ -208,6 +208,8 @@ select s.sid as 编号, s.name 姓名 from student as s;
 select * from student where name like '%z%';
 --一般用下面这种格式
 select * from student where name like '%' 'z' '%';
+--第二个为h
+select * from student where name like '_h*';
 ```
 
 ### 排序
