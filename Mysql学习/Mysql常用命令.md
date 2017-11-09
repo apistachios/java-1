@@ -115,7 +115,7 @@ desc student;
 
 --查看当前表的创建结构
 show create table student;
-```
+``` 
 
 ### 数据库表中记录的操作(增删改查)
 ```sql
