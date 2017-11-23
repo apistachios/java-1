@@ -103,7 +103,7 @@ public void test03() {
   ```html
   <bean name="people4" class="test.People" scope="singleton"></bean>
   ```
-  - prototype多例模式创建,当前对象在容器中每次调用getBean返回的是新的对象
+  - prototype多例模式创建,当前对象在容器中每次调用getBean返回的是新的对象(在Struts2中的action要配置成prototype)
   ```html
   <bean name="people4" class="test.People" scope="prototype"></bean>
   ```
