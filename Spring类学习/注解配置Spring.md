@@ -2,7 +2,7 @@
 
 - 导包4+2+1(spring包中的aop包)
 - 配置Context的schema约束,
-- 在application.xml文件中添加一句话`<context:component-scan base-package="com.zhiyou100.annotation"></context:component-scan>` 会扫描package中设置的包,并且包含其子包中的所有配置注解的**类**,会将其注入到spring容器中
+- 在application.xml文件中添加一句话`<context:component-scan base-package="test.annotation"></context:component-scan>` 会扫描package中设置的包和子包,并且包含其子包中的所有配置注解的**类**,会将其注入到spring容器中
 - 在包下的类中把需要spring容器进行管理的类,添加注解
 
 ## 配置到容器中的注解
@@ -15,7 +15,7 @@
 - `@Repository`: 用以区分此类是dao层
 
 ```java
-@Repository("user")
+@Component("user")
     public class User {
         private String name;
         private int age;
@@ -43,7 +43,7 @@ public class User {
 
 ### 生命周期方法
 
-需要设置容器的`close`才能看到销毁操作,并且只支持`singleton`的对象
+需要设置容器的`close``((ClassPathXmlApplicationContext)ac).close();`才能看到销毁操作,并且只支持`singleton`的对象
 
 - `@PostConstruct`放在初始化方法上面
  - `@PreDestroy`放在销毁的方法上面
