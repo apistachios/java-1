@@ -16,13 +16,13 @@
 
 ```java
 @Component("user")
-    public class User {
-        private String name;
-        private int age;
-        private Car car;
-        set...
-        get...
-    }
+public class User {
+    private String name;
+    private int age;
+    private Car car;
+    set...
+    get...
+}
 }
 ```
 
@@ -43,10 +43,10 @@ public class User {
 
 ### 生命周期方法
 
-需要设置容器的`close``((ClassPathXmlApplicationContext)ac).close();`才能看到销毁操作,并且只支持`singleton`的对象
+需要设置容器的`close` `((ClassPathXmlApplicationContext)ac).close();`才能看到销毁操作,并且只支持`singleton`的对象
 
 - `@PostConstruct`放在初始化方法上面
- - `@PreDestroy`放在销毁的方法上面
+- `@PreDestroy`放在销毁的方法上面
 
 ```java
 @PostConstruct
