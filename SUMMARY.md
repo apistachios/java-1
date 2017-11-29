@@ -59,3 +59,4 @@
     * [spring整合JDBC](Spring类学习/spring整合JDBC.md)
 * [MyBatis学习](MyBatis学习/README.md)
     * [MyBatis](MyBatis学习/MyBatis.md)
+    * [Mybatis整合Spring](MyBatis学习/Mybatis整合Spring.md)

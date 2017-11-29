@@ -248,7 +248,132 @@ mybatis内部配置的别名, 在mapper中写哪个都可以
 |list| List| arraylist| ArrayList|
 |collection| Collection| iterator| Iterator|
 
+## 输入映射(parameterType)与输出映射(resultType)
 
+POJO(Plain Ordinary Java Object)简单的Java对象,实际就是普通JavaBeans
+
+### 输入映射
+
+- 简单类型
+  - 整型
+  - String类型
+- 复杂类型
+  - POJO
+  - POJO的包装类(内部包含一个普通的类,可以进行多条件查询)
+  - 应用范围:查询条件可能是综合的查询条件,不仅包括用户查询条件还包括其它的查询条件(比如查询用户信息的时候,将用户购买商品信息也作为查询条件),这时可以使用包装对象传递输入参数。
+
+### 输出映射
+- 简单类型
+  - 整型
+  - 字符串
+```html
+<select id="findUserCount" resultType="Integer">
+    select count(*) from user
+</select>
+<select id="findUserName" resultType="String" parameterType="Integer">
+    select username from user where id = #{v}
+</select>
+```
+- 复杂类型
+  - POJO
+  - POJO列表
+resultMap
+如果sql查询字段名和pojo的属性名不一致,可以通过
+resultMap将字段名和属性名作一个对应关系 ,
+resultMap实质上还需要将查询结果映射到pojo对象
+中。
+
+### resultMap
+
+如果sql查询字段名和pojo的属性名不一致,可以通过resultMap将字段名和属性名作一个对应关系 ,resultMap实质上还需要将查询结果映射到pojo对象中。
+
+#### 同表
+
+字段和属性名称相同的可以不建立映射，会自动映射
+
+- column为数据库中名称
+- property为类中名称
+- javaType类里面数据类型，一般不设置
+- jdbcTyp数据库的数据类型，一般不设置
+```html
+<resultMap type="User" id="myResultMap">
+    <id column="id" property="id"/>
+    <result column="name" property="u_name" javaType="String" jdbcType="VARCHAR"/>
+</resultMap>
+```
+
+#### 多表
+
+字段和属性名称相同的也必须建立手动映射，不会自动映射
+
+- 一对一, 使用association标签， 指定javaType
+```html
+<association property="department" javaType="department" >
+```
+- 一对多, 使用collection标签， 指定ofType
+```html
+<collection property="department" ofType="department" >
+```
+
+## 动态sql
+
+### if标签
+
+可用于字符串的非空判断
+
+```html
+<select id="findUserByUser111" parameterType="User" resultType="User">
+    select * from user where 1=1 
+    <if test="name != null and name != '' ">
+        and name = like '%' #{name} '%' 
+    </if>
+    <if test="pwd != null and pwd != '' ">
+        and pwd like '%' #{pwd} '%'
+    </if>
+</select>
+```
+使用 `where 1=1`  防止为空的时候`and`在最前面
+
+### where标签
+
+- 如果where中没内容，where单词就不会添加
+- 会去掉第一个前and单词(紧挨着where的and)
+
+```html
+<where>
+  <if test="name != null and name != '' ">
+    and name like '%' #{name} '%'
+  </if>
+  <if test="pwd != null and pwd != '' ">
+    and pwd like '%' #{pwd} '%'
+  </if>
+</where>
+```
+
+### sql片段
+
+把多次出现的sql封装成一个片段, 在使用的时候进行引用
+
+```html
+<sql id="select">
+select * from
+</sql>
+```
+
+### foreach标签
+
+向sql传递数组或List,mybatis使用foreach解析
+
+- collection为传入类型，数组为array list为list
+- item为循环的参数
+- separator为分隔符
+- open和close标签
+
+```html
+<foreach collection="array" item="id" separator="," open="id in (" close=")">
+#{id}
+</foreach>
+```
 
 
 
