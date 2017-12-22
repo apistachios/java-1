@@ -64,3 +64,9 @@
 
 * [Maven](Maven/README.md)
     * [Maven](Maven/Maven.md)
+
+* [Hibernate](Hibernate/README.md)
+    * [Hibernate](Hibernate/Hibernate.md)
+    
+* [Struts2](Struts2/README.md)
+    * [Struts2](Struts2/Struts2.md)
